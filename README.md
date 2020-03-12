@@ -19,9 +19,8 @@ Sequence of steps that programs follows:
 7. load tidyr package
 8. transpose the data using gather function to convert all 561 result variable to column Value.
 9. merge transposed data with features to create comb1, with feature data information
-10. Create sequence variable per subject per activity per feature since there are multiple assessment for a feature for same subject.
-11. write the final data .txt file to be uploaded.
-12. group the comb1 data to do the average per subject per feature per activity.
-13. create dataset avg with the average per subject per feature per activity.
+10. write the final data .txt file to be uploaded.
+11. group the comb1 data to do the average per subject per feature per activity.
+12. create dataset avg with the average per subject per feature per activity.
 
 
