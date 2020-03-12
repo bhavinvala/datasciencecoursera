@@ -70,18 +70,15 @@ comb1<-merge(trans1,features,by.x="Vorder.n",by.y="Vorder.n")
 
 #order the comb1 data
 comb1<-arrange(comb1,subject,activity.n,activity,feature_stat_dim)
-#Creating activitysequence number since 1 subject has multiple assessment for same activity.
-U<-comb1%>% distinct(subject,activity.n,activity,feature)%>% mutate(activity.seq=seq_along(feature))
-comb2<-merge(comb1,U)
 
 #Final dataset
-final<-select(comb2,subject,activity.n, activity,activity.seq,feature,stat,dimension,Value)
+final<-select(comb1,subject,activity.n, activity,feature,stat,dimension,Value)
 head(final)
 
-#create .txt file to upload
+#create .txt file to upload to Github
 write.table(final,file="GnCD_final_assignment.txt",row.names = FALSE)
 
 #Creating summary dataset with average for each parameter
 f<-tbl_df(final)
-f<-group_by(f,subject,activity.n, activity,activity.seq,feature,stat,dimension)
+f<-group_by(f,subject,activity.n, activity,feature,stat,dimension)
 avg<-summarize(f,avg=mean(Value))
