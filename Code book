@@ -1,0 +1,12 @@
+Run_analysis.R program create the 'final' data as tidy and 'avg' data with average per subject per activity per feature.
+final dataset set uploaded as GnCD_final_assessment.txt
+
+'Final' data:
+variables:
+1. subject: subject number
+2. activity.n : numeric variable corresponding to activity as activity_labels.txt file 
+3. activity : character variable corresponding to activity as activity_labels.txt file 
+4. feature: feature information from feature.txt, for e.g.; tBodyAcc, tGravityAcc etc
+5. stat: statistics calculated. for e.g.; mean(), std()
+6  Dimension: if the measurement is for perticular dimension then X, Y or Z
+7. Value: result infomation.
